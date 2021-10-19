@@ -1,0 +1,11 @@
+[Unit]
+Description=ROS master
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "source /opt/ros/noetic/setup.bash && /opt/ros/noetic/bin/roscore"
+KillSignal=SIGKILL
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

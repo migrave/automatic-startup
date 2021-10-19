@@ -1,0 +1,13 @@
+[Unit]
+Description=Joypad
+After=roscore.service kelo_driver.service
+
+[Service]
+ExecStartPre=/bin/sleep 5
+ExecStart=/bin/bash -c "source /opt/ros/noetic/setup.bash && source /home/admin/robot.env && rosrun joy joy_node"
+KillSignal=SIGKILL
+User=admin
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

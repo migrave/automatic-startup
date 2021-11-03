@@ -1,0 +1,12 @@
+[Unit]
+Description=Freddy base driver and sensor bringup
+After=sys-subsystem-net-devices-eno1.device roscore.service
+
+[Service]
+ExecStart=/bin/bash -c "source /opt/ros/noetic/setup.bash && source /home/admin/robot.env && roslaunch freddy_bringup bringup.launch"
+KillSignal=SIGKILL
+User=admin
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

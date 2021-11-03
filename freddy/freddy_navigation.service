@@ -1,0 +1,12 @@
+[Unit]
+Description=Navigation and localisation components for Freddy
+After=roscore.service
+
+[Service]
+ExecStart=/bin/bash -c "source /opt/ros/noetic/setup.bash && source /home/admin/robot.env && roslaunch freddy_bringup navigation.launch"
+KillSignal=SIGKILL
+User=admin
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

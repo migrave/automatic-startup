@@ -1,6 +1,6 @@
 #!/bin/bash
 
-allowed_platforms=("freddy")
+allowed_platforms=("freddy","qtrobot")
 allowed_cmds=("enable","restart","disable")
 platform=$1
 cmd=$2

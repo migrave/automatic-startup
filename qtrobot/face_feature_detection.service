@@ -2,7 +2,7 @@
 Description=Face feature detector used in MigrAVE
 
 [Service]
-ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch roslaunch migrave_face_feature_detector face_feature_detector.launch"
+ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch migrave_face_feature_detector face_feature_detector.launch"
 KillSignal=SIGKILL
 User=qtrobot
 Restart=always

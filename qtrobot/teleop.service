@@ -1,0 +1,11 @@
+[Unit]
+Description=Joypad for QTrobot
+
+[Service]
+ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch qt_teleop joy.launch"
+KillSignal=SIGKILL
+User=qtrobot
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

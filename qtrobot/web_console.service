@@ -1,0 +1,11 @@
+[Unit]
+Description=MigrAVE web console
+
+[Service]
+ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch migrave_web_console qt_rosbridge_websocket.launch"
+KillSignal=SIGKILL
+User=qtrobot
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

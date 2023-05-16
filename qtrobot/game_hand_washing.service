@@ -1,0 +1,11 @@
+[Unit]
+Description=Color game
+
+[Service]
+ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch migrave_games migrave_game_hand_wash.launch"
+KillSignal=SIGKILL
+User=qtrobot
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

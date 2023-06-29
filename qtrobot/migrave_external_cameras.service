@@ -1,0 +1,11 @@
+[Unit]
+Description=Driver for external cameras used in MigrAVE
+
+[Service]
+ExecStart=/bin/bash -c "source /home/qtrobot/robot/autostart/qt_robot.inc && wait_for_network && prepare_ros_environment && source /home/qtrobot/catkin_build_ws/devel/setup.bash && roslaunch migrave_video_recorder usb_cam_both.launch"
+KillSignal=SIGKILL
+User=qtrobot
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
